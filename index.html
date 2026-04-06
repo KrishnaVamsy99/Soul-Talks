@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoulTalk | Premium Conversation & Companionship</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background -->
+  <div id="particles-js"></div>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+  <div class="bg-glow glow-3"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">Soul<span>Talk</span></div>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#important-info">Info</a>
+        <a href="#interactive">Relax</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a href="javascript:void(0)" onclick="openWhatsApp('General Inquiry')" class="call-btn">
+        Contact Me
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="hero">
+    <div class="container hero-content reveal">
+      <span class="status-pill">
+        <i class="fas fa-circle"></i> Online & Available
+      </span>
+
+      <h1>A Calm Space for <span class="gradient-text">Meaningful Conversations</span></h1>
+
+      <p>
+        Premium one-to-one conversation sessions in a private, respectful, and comfortable environment.
+        You can connect online, by call, or—where available—in person.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#pricing" class="btn-primary">View Plans</a>
+        <a href="#contact" class="btn-secondary">Book Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Important Info -->
+  <section id="important-info" class="info-section">
+    <div class="container">
+      <h2 class="section-title reveal">Important Information</h2>
+      <p class="section-subtitle reveal">Please read before booking a session.</p>
+
+      <div class="info-grid">
+        <div class="info-card reveal">
+          <div class="info-icon"><i class="fas fa-user-shield"></i></div>
+          <h3>Privacy & Respect</h3>
+          <p>
+            Your conversations are treated with <strong>privacy and respect</strong>.
+            Sessions are intended to be a comfortable, judgment-free space for conversation.
+          </p>
+        </div>
+
+        <div class="info-card reveal">
+          <div class="info-icon"><i class="fas fa-comments"></i></div>
+          <h3>First 5 Minutes</h3>
+          <p>
+            For the <strong>first 5 minutes</strong>, you are welcome to clarify your doubts,
+            ask questions, and make sure you feel comfortable before continuing.
+          </p>
+        </div>
+
+        <div class="info-card reveal">
+          <div class="info-icon"><i class="fas fa-clock"></i></div>
+          <h3>Availability</h3>
+          <p>
+            <strong>Weekdays:</strong> 6:00 PM to 10:00 PM only.<br>
+            <strong>Weekends:</strong> Available throughout the day.
+          </p>
+        </div>
+
+        <div class="info-card reveal">
+          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h3>In-Person Meet</h3>
+          <p>
+            If you would like to connect <strong>in person</strong>, the location can be chosen by you.
+            I can come only if the distance is <strong>less than 10 km</strong>.
+          </p>
+        </div>
+
+        <div class="info-card full-width reveal">
+          <div class="info-icon"><i class="fas fa-city"></i></div>
+          <h3>Location Availability</h3>
+          <p>
+            At present, <strong>in-person meetings are available only in Hyderabad</strong>.
+            Outside Hyderabad, only online / call-based sessions are available for now.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Section -->
+  <section id="interactive" class="interactive-section">
+    <div class="container">
+      <h2 class="section-title reveal">Take a Moment for Yourself</h2>
+      <p class="section-subtitle reveal">Relax, breathe, or enjoy a quick game before you connect.</p>
+
+      <div class="games-container">
+        <!-- Breathing -->
+        <div class="game-panel reveal">
+          <h3>Guided Breathing</h3>
+          <p>Follow the circle to slow down and relax.</p>
+
+          <div class="breathe-container">
+            <div class="breathe-circle" id="breatheCircle">
+              <span id="breatheText">Start</span>
+            </div>
+          </div>
+
+          <button class="btn-action" id="breatheBtn" onclick="startBreathing(this)">
+            Begin Exercise
+          </button>
+        </div>
+
+        <!-- Tic Tac Toe -->
+        <div class="game-panel reveal">
+          <h3>Tic-Tac-Toe</h3>
+          <p>Play a quick game against the bot.</p>
+
+          <div class="tic-tac-toe-board" id="board">
+            <div class="cell" onclick="makeMove(0)"></div>
+            <div class="cell" onclick="makeMove(1)"></div>
+            <div class="cell" onclick="makeMove(2)"></div>
+            <div class="cell" onclick="makeMove(3)"></div>
+            <div class="cell" onclick="makeMove(4)"></div>
+            <div class="cell" onclick="makeMove(5)"></div>
+            <div class="cell" onclick="makeMove(6)"></div>
+            <div class="cell" onclick="makeMove(7)"></div>
+            <div class="cell" onclick="makeMove(8)"></div>
+          </div>
+
+          <div id="gameStatus" class="game-status">Your turn! (You are X)</div>
+          <button class="btn-action" onclick="resetGame()">Restart Game</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing-section">
+    <div class="container">
+      <h2 class="section-title reveal">Choose Your Session</h2>
+      <p class="section-subtitle reveal">Flexible options for your comfort and convenience.</p>
+
+      <div class="pricing-container">
+        <div class="price-card reveal">
+          <div class="card-header">
+            <h4>Quick Connect</h4>
+            <div class="price">$5</div>
+            <p class="duration">30 Minutes</p>
+          </div>
+          <button class="btn-card" onclick="openWhatsApp('30 Minutes - $5')">Connect Now</button>
+        </div>
+
+        <div class="price-card featured reveal">
+          <div class="popular-tag">Recommended</div>
+          <div class="card-header">
+            <h4>Premium Session</h4>
+            <div class="price">$9</div>
+            <p class="duration">1 Hour</p>
+          </div>
+          <button class="btn-card" onclick="openWhatsApp('1 Hour - $9')">Connect Now</button>
+        </div>
+
+        <div class="price-card reveal">
+          <div class="card-header">
+            <h4>Half Day</h4>
+            <div class="price">$15</div>
+            <p class="duration">4 Hours</p>
+          </div>
+          <button class="btn-card" onclick="openWhatsApp('Half Day - $15')">Connect Now</button>
+        </div>
+
+        <div class="price-card reveal">
+          <div class="card-header">
+            <h4>Full Day</h4>
+            <div class="price">$25</div>
+            <p class="duration">12 Hours</p>
+          </div>
+          <button class="btn-card" onclick="openWhatsApp('1 Day - $25')">Connect Now</button>
+        </div>
+
+        <div class="price-card special reveal">
+          <div class="card-header">
+            <h4>Extended Time</h4>
+            <div class="price">$45</div>
+            <p class="duration">Custom / More Time</p>
+          </div>
+          <button class="btn-card" onclick="openWhatsApp('More Time - $45')">Connect Now</button>
+        </div>
+      </div>
+
+      <div class="pricing-note reveal">
+        <p>
+          <strong>Note:</strong> Weekdays availability is only from <strong>6 PM to 10 PM</strong>.
+          Weekends are available <strong>throughout the day</strong>.
+          In-person meetings are currently available <strong>only in Hyderabad</strong> and only if the distance is <strong>under 10 km</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title reveal">Reach Me Directly</h2>
+      <p class="section-subtitle reveal">Choose the easiest way to connect.</p>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <h3>WhatsApp</h3>
+          <p>Fastest way to book and chat.</p>
+          <a href="javascript:void(0)" onclick="openWhatsApp('WhatsApp Inquiry')" class="contact-link">Open WhatsApp</a>
+        </div>
+
+        <div class="contact-card reveal">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <h3>Call</h3>
+          <p>Direct phone contact.</p>
+          <a id="callLink" href="#" class="contact-link">Call Now</a>
+        </div>
+
+        <!-- <div class="contact-card reveal">
+          <div class="contact-icon"><i class="fab fa-telegram"></i></div>
+          <h3>Telegram</h3>
+          <p>Alternative private messaging.</p>
+          <a id="telegramLink" href="#" target="_blank" class="contact-link">Open Telegram</a>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 SoulTalk Premium Services. Privacy & Respect First.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
